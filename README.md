@@ -11,6 +11,10 @@ Hệ thống tích hợp mô hình học máy hiện đại từ nền tảng **
 * **Tên model:** `distilbert-base-uncased-finetuned-sst-2-english`
 * **Nhiệm vụ:** Sentiment Analysis (Phân loại cảm xúc Tích cực/Tiêu cực).
 * **Link tham khảo:** [Hugging Face Model Hub](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)
+---
+## Video demo:
+
+https://drive.google.com/file/d/11yf7xo848_uWa-iIecPuDKDsObFvCdwK/view?usp=sharing
 
 ---
 
@@ -71,3 +75,4 @@ python test_api.py
 
 Cách 2: Kiểm thử tương tác (Swagger UI)
 Truy cập: http://127.0.0.1:8000/docs
+
