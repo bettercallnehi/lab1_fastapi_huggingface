@@ -1,19 +1,75 @@
 # Sentiment Analysis Web API - Lab 1
+# Lab 1 - Sentiment Analysis Web API 🚀
 
-## 1. Thông tin sinh viên
+## 📋 Thông tin sinh viên
 * **Họ và tên:** Phan Thế Minh Trí
 * **Mã số sinh viên:** 24120506
-* **Lớp:** Tư Duy Tính Toán 24CTT3
+* **Lớp:** Toán Tổ Hợp - 24CTT1
+* **Môn học:** Tư duy tính toán
+* **Giảng viên hướng dẫn:** Thầy Lê Đức Khoan
+* **Trường:** Đại học Khoa học Tự nhiên - ĐHQG TP.HCM
 
-## 2. Giới thiệu mô hình
-* **Tên mô hình:** `distilbert-base-uncased-finetuned-sst-2-english`
-* **Liên kết:** [Hugging Face Model Hub](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)
-* **Chức năng:** Phân loại cảm xúc văn bản tiếng Anh thành hai nhãn: **POSITIVE** (Tích cực) hoặc **NEGATIVE** (Tiêu cực).
+---
 
-## 3. Link Youtube
-Đây là link video demo trên Youtube: 
+## Mô hình sử dụng
+Hệ thống tích hợp mô hình học máy hiện đại từ nền tảng **Hugging Face** để thực hiện tác vụ phân tích cảm xúc văn bản.
+* **Tên model:** `distilbert-base-uncased-finetuned-sst-2-english`
+* **Nhiệm vụ:** Sentiment Analysis (Phân loại cảm xúc Tích cực/Tiêu cực).
+* **Link tham khảo:** [Hugging Face Model Hub](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)
 
-## 4. Hướng dẫn cài đặt
-Thực hiện lệnh sau để cài đặt các thư viện cần thiết:
+---
+
+## Công nghệ triển khai
+Dự án được xây dựng với các tiêu chuẩn kỹ thuật chuyên nghiệp, chú trọng vào tính ổn định và kiểm soát dữ liệu:
+* **Framework:** FastAPI (Hiệu suất cao, hỗ trợ tài liệu hóa tự động).
+* **Xác thực dữ liệu:** Pydantic (Sử dụng `Field` để ràng buộc dữ liệu đầu vào, đảm bảo không nhận chuỗi rỗng).
+* **Xử lý ngoại lệ:** Tích hợp khối `try-except` khi khởi tạo pipeline để đảm bảo server không bị crash khi lỗi tải mô hình.
+* **Đa luồng:** Chạy server bằng `uvicorn` hỗ trợ xử lý nhiều yêu cầu cùng lúc.
+
+---
+## Chi tiết danh sách Endpoints
+1. GET /
+Mô tả: Trả về thông tin sinh viên và giới thiệu hệ thống.
+
+Response: JSON Object chứa student_info.
+
+2. GET /health
+Mô tả: Kiểm tra trạng thái hoạt động của Server và Model.
+
+Response: {"status": "healthy"}
+
+3. POST /predict
+Mô tả: Tiếp nhận văn bản tiếng Anh và trả về kết quả phân tích.
+
+Dữ liệu gửi lên (Request Body):
+```JSON
+{
+  "text": "I really enjoy this Computer Science course!"
+}
+```
+Dữ liệu trả về (Response): Bao gồm nhãn cảm xúc và điểm tin cậy (score).
+
+---
+
+## Hướng dẫn cài đặt và thực thi
+
+### 1. Cài đặt thư viện cần thiết
+Mở Terminal tại thư mục dự án và chạy lệnh sau để cài đặt môi trường:
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
+```
+### 2. Kích hoạt Server
+Sử dụng Python để thực thi file chính:
+```bash
+python main.py
+```
+### 3. Kiểm thử và Demo
+Cách 1: Kiểm thử bằng Script Python
+Dự án tách biệt rõ ràng logic server và logic kiểm thử. Bạn có thể chạy script sau để kiểm tra tự động:
+
+```bash
+python test_api.py
+```
+
+Cách 2: Kiểm thử tương tác (Swagger UI)
+Truy cập: http://127.0.0.1:8000/docs
