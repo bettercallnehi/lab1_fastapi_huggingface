@@ -1,4 +1,3 @@
-# Sentiment Analysis Web API - Lab 1
 # Lab 1 - Sentiment Analysis Web API 🚀
 
 ## 📋 Thông tin sinh viên
