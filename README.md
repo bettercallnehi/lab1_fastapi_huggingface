@@ -4,11 +4,7 @@
 ## 📋 Thông tin sinh viên
 * **Họ và tên:** Phan Thế Minh Trí
 * **Mã số sinh viên:** 24120506
-* **Lớp:** Toán Tổ Hợp - 24CTT1
-* **Môn học:** Tư duy tính toán
-* **Giảng viên hướng dẫn:** Thầy Lê Đức Khoan
-* **Trường:** Đại học Khoa học Tự nhiên - ĐHQG TP.HCM
-
+* **Lớp:** Tư duy tính toán 24CTT3
 ---
 
 ## Mô hình sử dụng
